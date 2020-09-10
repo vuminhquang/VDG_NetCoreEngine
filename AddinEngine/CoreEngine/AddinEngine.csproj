@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>VDG</Company>
+    <Description>An addins framework to load automatically</Description>
+    <Copyright>VDG</Copyright>
+    <Authors>quangvvm@outlook.com</Authors>
+    <PackageProjectUrl>https://github.com/vuminhquang/VDG_NetCoreEngine</PackageProjectUrl>
+    <PackageId>NetCoreAddinEngine</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoreEngine.Abstract\AddInEngine.Abstract.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="AddIns\This folder is just a placeholder not do anything in coding phase">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="AddIns\TextFile.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
