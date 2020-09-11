@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <Description>An addins framework to load automatically</Description>
+    <PackageProjectUrl>https://github.com/vuminhquang/VDG_NetCoreEngine</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
