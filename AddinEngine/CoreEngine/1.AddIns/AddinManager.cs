@@ -9,8 +9,9 @@ namespace AddinEngine
     {
         static AddinManager()
         {
-            Global.ConfiguringConfigs += Global_ConfiguringConfigs;
-            Global.ConfiguringServices += Global_OnConfiguringServices;
+            Global.ConfigureAppConfiguration += Global_ConfigureAppConfiguration;
+            Global.ConfigureServices += Global_ConfigureServices;
+            Global.ConfigureWeb += Global_ConfigureWeb;
         }
 
         public static void WarmUp()
@@ -18,7 +19,7 @@ namespace AddinEngine
             //Do nothing
         }
 
-        private static void Global_ConfiguringConfigs(
+        private static void Global_ConfigureAppConfiguration(
             Microsoft.Extensions.Hosting.HostBuilderContext context,
             IConfigurationBuilder configurationBuilder)
         {
@@ -30,7 +31,7 @@ namespace AddinEngine
             }
         }
 
-        private static void Global_OnConfiguringServices(
+        private static void Global_ConfigureServices(
             Microsoft.Extensions.Hosting.HostBuilderContext context,
             IServiceCollection services)
         {
@@ -48,6 +49,16 @@ namespace AddinEngine
             //     services.LoadDependencies("./AddIns/GenericWebApiCommands", "*.dll");
             //     Console.WriteLine("Load");
             // });
+        }
+
+        private static void Global_ConfigureWeb(dynamic app, dynamic env)
+        {
+            var addInsDirectory = GetApplicationRoot(true) + "/AddIns";
+
+            foreach (var dir in Directory.GetDirectories(addInsDirectory))
+            {
+                ConfigureWebLoader.LoadDependencies(dir, "*.dll", app, env);
+            }
         }
 
         private static string GetApplicationRoot(bool includeBinFolder)

@@ -4,21 +4,20 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>VDG</Company>
-    <Description>An addins framework to load automatically</Description>
+    <Description>NET Core engine for console/ASP.NET to use addins</Description>
     <Copyright>VDG</Copyright>
     <Authors>quangvvm@outlook.com</Authors>
     <PackageProjectUrl>https://github.com/vuminhquang/VDG_NetCoreEngine</PackageProjectUrl>
-    <PackageId>NetCoreAddinEngine</PackageId>
+    <PackageId>AddinEngine</PackageId>
+    <Version>2.0.0</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.8" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="System.ComponentModel.Composition" Version="4.7.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\CoreEngine.Abstract\AddInEngine.Abstract.csproj" />
+    <PackageReference Include="AddinEngine.Abstract" Version="2.0.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="5.0.0" />
   </ItemGroup>
   
   <ItemGroup>

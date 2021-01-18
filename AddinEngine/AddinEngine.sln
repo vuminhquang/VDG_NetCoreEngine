@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddinEngine", "CoreEngine\AddinEngine.csproj", "{3513825D-E66E-4C78-A997-5E76EFA475DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddInEngine.Abstract", "CoreEngine.Abstract\AddInEngine.Abstract.csproj", "{3CFE78A1-15D3-46A6-AA5B-FACE40B1DB11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddinEngine.Abstract", "CoreEngine.Abstract\AddinEngine.Abstract.csproj", "{3CFE78A1-15D3-46A6-AA5B-FACE40B1DB11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
