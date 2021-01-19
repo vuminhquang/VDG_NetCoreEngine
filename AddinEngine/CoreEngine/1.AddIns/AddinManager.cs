@@ -69,6 +69,11 @@ namespace AddinEngine
                 ? new Regex(@"(?<!fil)[A-Za-z]:\\+[\S\s]*")
                 : new Regex(@"(?<!fil)[A-Za-z]:\\+[\S\s]*?(?=\\+bin)"); //(?=\\+bin): It’s a lookahead (zero length assertion). It will check for “bin” but not include it in the match
             var appRoot = appPathMatcher.Match(exePath).Value;
+            if (string.IsNullOrEmpty(appRoot))
+            {
+                //linux cases or docker
+                appRoot = ".";
+            }
             return appRoot;
         }
     }
