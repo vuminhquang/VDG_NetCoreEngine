@@ -7,6 +7,7 @@ namespace AddinEngine
 {
     public class AddinManager
     {
+        public static string AddinFolderPath = null;
         static AddinManager()
         {
             Global.ConfigureAppConfiguration += Global_ConfigureAppConfiguration;
@@ -23,7 +24,7 @@ namespace AddinEngine
             Microsoft.Extensions.Hosting.HostBuilderContext context,
             IConfigurationBuilder configurationBuilder)
         {
-            var addInsDirectory = GetApplicationRoot(true) + "/AddIns";
+            var addInsDirectory = AddinFolderPath ?? GetApplicationRoot(true) + "/AddIns";
 
             foreach (var dir in Directory.GetDirectories(addInsDirectory))
             {
@@ -35,7 +36,7 @@ namespace AddinEngine
             Microsoft.Extensions.Hosting.HostBuilderContext context,
             IServiceCollection services)
         {
-            var addInsDirectory = GetApplicationRoot(true) + "/AddIns";
+            var addInsDirectory = AddinFolderPath ?? GetApplicationRoot(true) + "/AddIns";
 
             foreach (var dir in Directory.GetDirectories(addInsDirectory))
             {
@@ -53,7 +54,7 @@ namespace AddinEngine
 
         private static void Global_ConfigureWeb(dynamic app, dynamic env)
         {
-            var addInsDirectory = GetApplicationRoot(true) + "/AddIns";
+            var addInsDirectory = AddinFolderPath ?? GetApplicationRoot(true) + "/AddIns";
 
             foreach (var dir in Directory.GetDirectories(addInsDirectory))
             {
