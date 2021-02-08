@@ -1,4 +1,4 @@
-﻿namespace AddInEngine.Abstract
+﻿namespace AddinEngine.Abstract
 {
     public interface IWebConfigurationResolver
     {
