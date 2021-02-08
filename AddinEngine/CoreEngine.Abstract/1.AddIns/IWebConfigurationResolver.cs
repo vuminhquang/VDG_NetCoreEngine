@@ -2,6 +2,6 @@
 {
     public interface IWebConfigurationResolver
     {
-        void SetUp(dynamic app, dynamic env);  
+        void SetUp(dynamic app, dynamic env);
     }
 }

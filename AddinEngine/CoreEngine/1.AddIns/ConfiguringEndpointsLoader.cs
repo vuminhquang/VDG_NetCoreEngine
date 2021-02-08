@@ -6,16 +6,16 @@ using AddinEngine.Abstract;
 
 namespace AddinEngine
 {
-    public static class ConfigureWebLoader
+    public static class ConfiguringEndpointsLoader
     {
-        public static void LoadDependencies(string path, string pattern, dynamic app, dynamic env)
+        public static void LoadDependencies(string path, string pattern, dynamic endpoints, dynamic env)
         {
             try
             {
-                var modules = Loader<IWebConfigurationResolver>.GetModules(path, pattern);
+                var modules = Loader<IWebConfiguringEndpointsResolver>.GetModules(path, pattern);
                 foreach (var module in modules.Where(module => module != null))  
                 {  
-                    module.SetUp(app, env);  
+                    module.ConfigureEndpoints(endpoints, env);  
                 }
             }  
             catch (ReflectionTypeLoadException typeLoadException)  

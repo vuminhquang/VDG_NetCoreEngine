@@ -12,7 +12,8 @@ namespace AddinEngine
         {
             Global.ConfigureAppConfiguration += Global_ConfigureAppConfiguration;
             Global.ConfigureServices += Global_ConfigureServices;
-            Global.ConfigureWeb += Global_ConfigureWeb;
+            Global.StartupConfigure += Global_StartupConfigure;
+            Global.ConfigureEndpoints += Global_ConfigureEndpoints;
         }
 
         public static void WarmUp()
@@ -52,13 +53,23 @@ namespace AddinEngine
             // });
         }
 
-        private static void Global_ConfigureWeb(dynamic app, dynamic env)
+        private static void Global_StartupConfigure(dynamic app, dynamic env)
         {
             var addInsDirectory = AddinFolderPath ?? GetApplicationRoot(true) + "/AddIns";
 
             foreach (var dir in Directory.GetDirectories(addInsDirectory))
             {
                 ConfigureWebLoader.LoadDependencies(dir, "*.dll", app, env);
+            }
+        }
+
+        private static void Global_ConfigureEndpoints(dynamic endpoints, dynamic env)
+        {
+            var addInsDirectory = AddinFolderPath ?? GetApplicationRoot(true) + "/AddIns";
+
+            foreach (var dir in Directory.GetDirectories(addInsDirectory))
+            {
+                ConfiguringEndpointsLoader.LoadDependencies(dir, "*.dll", endpoints, env);
             }
         }
 
