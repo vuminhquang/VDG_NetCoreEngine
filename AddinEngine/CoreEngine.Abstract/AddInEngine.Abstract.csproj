@@ -10,6 +10,8 @@
     <Company>VDG</Company>
     <Copyright>VDG</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <AssemblyVersion>2.0.0.2</AssemblyVersion>
+    <FileVersion>2.0.0.2</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
