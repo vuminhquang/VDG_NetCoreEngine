@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition.Hosting;
-using System.ComponentModel.Composition.Primitives;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using AddinEngine.Abstract;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace AddinEngine
 {
@@ -20,7 +16,7 @@ namespace AddinEngine
             {
                 var modules = Loader<IConfigurationResolver>.GetModules(path, pattern);
                 var registerComponent = new ConfigurationRegister(configurationBuilder);
-                foreach (IConfigurationResolver module in modules.Where(module => module != null))
+                foreach (var module in modules.Where(module => module != null))
                 {
                     module.SetUp(registerComponent);
                 }

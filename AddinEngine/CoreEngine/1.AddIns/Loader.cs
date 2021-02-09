@@ -20,7 +20,12 @@ namespace AddinEngine
             var modules = exports
                 .Where(export => export.Definition.ContractName == typeof(T).FullName)
                 .Select(export => (T)export.Value);
-            return modules;
+
+            foreach (var module in modules.Where(module => module != null))
+            {
+                //yield return to make the module process outside this function before dispose aggregateCatalog
+                yield return module;
+            }
         }
 
         private static ImportDefinition BuildImportDefinition()
