@@ -102,8 +102,13 @@ namespace AddinEngine.Abstract
                             {
                                 await ExecuteTask(item, mainTaskNum, stoppingToken);
                             }
+                            catch(Exception e)
+                            {
+                                Console.WriteLine($"Error on run task {Thread.CurrentThread.ManagedThreadId}, {e}");
+                            }
                             finally
                             {
+                                Console.WriteLine($"Release task {Thread.CurrentThread.ManagedThreadId}");
                                 throttler.Release();
                             }
                         }, stoppingToken);

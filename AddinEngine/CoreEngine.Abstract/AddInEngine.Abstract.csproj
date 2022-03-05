@@ -12,6 +12,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <AssemblyVersion>2.0.0.2</AssemblyVersion>
     <FileVersion>2.0.0.2</FileVersion>
+    <PackageVersion>2.0.9</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
