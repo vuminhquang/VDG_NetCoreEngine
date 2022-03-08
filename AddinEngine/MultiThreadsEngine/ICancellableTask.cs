@@ -1,4 +1,4 @@
-﻿namespace AddinEngine.Abstract
+﻿namespace MultiThreadsEngine
 {
     public interface ICancellableTask
     {

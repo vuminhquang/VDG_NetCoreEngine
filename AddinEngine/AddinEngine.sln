@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddinEngine", "CoreEngine\A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddinEngine.Abstract", "CoreEngine.Abstract\AddinEngine.Abstract.csproj", "{3CFE78A1-15D3-46A6-AA5B-FACE40B1DB11}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiThreadsEngine", "MultiThreadsEngine\MultiThreadsEngine.csproj", "{B09774A2-5929-4BCB-8BFA-5E7FCB0673C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3CFE78A1-15D3-46A6-AA5B-FACE40B1DB11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CFE78A1-15D3-46A6-AA5B-FACE40B1DB11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CFE78A1-15D3-46A6-AA5B-FACE40B1DB11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B09774A2-5929-4BCB-8BFA-5E7FCB0673C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B09774A2-5929-4BCB-8BFA-5E7FCB0673C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B09774A2-5929-4BCB-8BFA-5E7FCB0673C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B09774A2-5929-4BCB-8BFA-5E7FCB0673C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

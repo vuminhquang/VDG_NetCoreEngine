@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>MultiThreadsEngine</Title>
+        <Authors>vu.minh.quang@outlook.com</Authors>
+        <Description>Well tested, using in production code supporting for Multi-Thread Tasks with time out and throttler. </Description>
+        <Copyright>vu.minh.quang@outlook.com</Copyright>
+        <PackageProjectUrl>https://github.com/vuminhquang/VDG_NetCoreEngine</PackageProjectUrl>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+        <PackageReference Include="ObservableConcurrentQueue" Version="2.0.1" />
+    </ItemGroup>
+
+</Project>
